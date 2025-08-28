@@ -8,11 +8,25 @@ const copyCountEl = document.getElementById("copyCount");
 const historyBox = document.getElementById("historyList");
 const clearBtn = document.getElementById("clearBtn");
 
+const heartCountMobile = document.getElementById("heartCountMobile");
+const coinCountMobile = document.getElementById("coinCountMobile");
+const copyCountMobile = document.getElementById("copyCountMobile");
 
 function getTime() {
     const current = new Date();
     return current.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true });
 }
+
+function updateCounters() {
+    heartCountEl.innerText = hearts;
+    coinCountEl.innerText = coins;
+    copyCountEl.innerText = copies;
+
+    heartCountMobile.innerText = hearts;
+    coinCountMobile.innerText = coins;
+    copyCountMobile.innerText = copies;
+}
+
 
 function addHistory(name, number) {
     const div = document.createElement("div");
@@ -37,12 +51,15 @@ for (let card of cards) {
     const callBtn = card.querySelector(".callBtn");
     const copyBtn = card.querySelector(".copyBtn");
 
+    
+
 
     if (heartBtn) {
         heartBtn.addEventListener("click", () => {
             hearts++;
             heartCountEl.innerText = hearts;
             heartBtn.classList.toggle("text-red-500");
+            updateCounters();
         });
     }
     if (callBtn) {
@@ -53,6 +70,7 @@ for (let card of cards) {
             }
             coins -= 20;
             coinCountEl.innerText = coins;
+            updateCounters();
             alert(`Calling ${name} at ${number}`);
             addHistory(name, number);
         });
@@ -62,6 +80,7 @@ for (let card of cards) {
             navigator.clipboard.writeText(number).then(() => {
                 copies++;
                 copyCountEl.innerText = copies;
+                updateCounters();
                 alert(`Copied ${number} to clipboard`);
             });
         });
