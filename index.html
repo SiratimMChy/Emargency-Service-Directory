@@ -9,34 +9,69 @@
 </head>
 
 <body style="background: rgba(245, 255, 246, 1);">
-    <nav class="flex justify-between items-center bg-white shadow px-6 py-3 h-18">
-        <!--Left-->
-        <div class="flex justify-between md:flex-row items-center px-6 py-2 gap-2">
-            <img src="assets/logo.png" alt="logo" class="w-12 h-12">
-            <P class="text-xl font-bold text-green-800 Py-2">Emergency<br />Service</P>
+    <nav class="bg-white shadow-md w-full z-50">
+        <div class="max-w-[1250px] mx-auto flex justify-between items-center p-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="assets/logo.png" alt="logo" class="w-12 h-12">
+                <p class="text-xl font-bold text-green-800 ml-2">Emergency<br>Service</p>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-4">
+                <!-- Hearts -->
+                <div class="flex items-center bg-[#41ff6b1a] px-3 py-1 rounded-full">
+                    <img src="assets/heart.png" class="w-6 h-6">
+                    <span id="heartCount" class="px-1">0</span>
+                </div>
+                <!-- Coins -->
+                <div class="flex items-center bg-[#41ff6b1a] px-3 py-1 rounded-full">
+                    <img src="assets/coin.png" class="w-6 h-6">
+                    <span id="coinCount" class="px-1">100</span>
+                </div>
+                <!-- Copy -->
+                <div class="flex items-center bg-green-600 text-white px-3 py-1 rounded-full">
+                    <span id="copyCount" class="px-1">0</span> Copy
+                </div>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="focus:outline-none">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-        <!-- Right -->
-        <div class="flex items-center md:justify-end space-x-4">
-            <div class="flex items-center bg-[#41ff6b1a] text-black px-3 py-1 rounded-full">
-                <span><img src="/assets/heart.png" alt="" class="w-6 h-6"></span>
-                <span id="heartCount" class=" px-1">0</span>
-            </div>
-            <div class="flex items-center bg-[#41ff6b1a] text-black px-3 py-1 rounded-full">
-                <span> <img src="assets/coin.png" alt="logo" class="w-6 h-6"></span>
-                <span id="coinCount" class=" px-1">100</span>
-            </div>
-            <div class="flex items-center bg-green-600 text-white px-3 py-1 rounded-full">
-                <span id="copyCount" class=" px-1">0</span> Copy
-            </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <ul class="flex flex-col space-y-4 p-4 text-lg font-medium">
+                <li class="flex items-center bg-[#41ff6b1a] px-3 py-1 rounded-full">
+                    <img src="assets/heart.png" class="w-6 h-6">
+                    <span id="heartCountMobile" class="px-1">0</span>
+                </li>
+                <li class="flex items-center bg-[#41ff6b1a] px-3 py-1 rounded-full">
+                    <img src="assets/coin.png" class="w-6 h-6">
+                    <span id="coinCountMobile" class="px-1">100</span>
+                </li>
+                <li class="flex items-center bg-green-600 text-white px-3 py-1 rounded-full">
+                    <span id="copyCountMobile" class="px-1">0</span> Copy
+                </li>
+            </ul>
         </div>
     </nav>
+
     <!-- Hero Section -->
     <section
-        class="bg-[linear-gradient(90deg,rgba(1,49,35,1),rgba(0,103,71,1)_50%,rgba(1,50,35,1)_100%)] text-center text-white py-4 px-20">
+        class="bg-[linear-gradient(90deg,rgba(1,49,35,1),rgba(0,103,71,1)_50%,rgba(1,50,35,1)_100%)] text-center text-white py-4 px-4 sm:px-6 lg:px-20 w-full">
         <img src="assets/logo-dark.png" class="w-16 mx-auto mb-4" alt="logo">
-        <h1 class="text-3xl font-bold">Emergency Service Directory</h1>
-        <p class="mt-2 text-md">Government Emergency Services at Your Fingertip - A Project by Government of the
-            People's Republic of Bangladesh</p>
+        <h1 class="text-2xl sm:text-3xl font-bold">Emergency Service Directory</h1>
+        <p class="mt-2 text-md">
+        <p class="mt-2 text-sm sm:text-md">Government Emergency Services at Your Fingertip - A Project by Government of
+            the People's Republic of Bangladesh</p>
     </section>
 
     <!--Cards Section-->
