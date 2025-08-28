@@ -31,7 +31,7 @@ const cards = document.querySelectorAll(".bg-white.rounded-xl");
 
 for (let card of cards) {
     const name = card.querySelector("h3").innerText;
-    const number = card.querySelector("p.text-3xl").innerText;
+    const number = card.querySelector("p.text-2xl").innerText;
 
     const heartBtn = card.querySelector(".heartBtn");
     const callBtn = card.querySelector(".callBtn");
