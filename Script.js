@@ -8,15 +8,11 @@ const copyCountEl = document.getElementById("copyCount");
 const historyBox = document.getElementById("historyList");
 const clearBtn = document.getElementById("clearBtn");
 
-const heartCountMobile = document.getElementById("heartCountMobile");
-const coinCountMobile = document.getElementById("coinCountMobile");
-const copyCountMobile = document.getElementById("copyCountMobile");
 
 function getTime() {
     const current = new Date();
     return current.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true });
 }
-
 function updateCounters() {
     heartCountEl.innerText = hearts;
     coinCountEl.innerText = coins;
@@ -26,8 +22,6 @@ function updateCounters() {
     coinCountMobile.innerText = coins;
     copyCountMobile.innerText = copies;
 }
-
-
 function addHistory(name, number) {
     const div = document.createElement("div");
     div.className = "flex justify-between bg-gray-100 shadow py-4 rounded-xl px-4 hover:bg-gray-200";
@@ -50,7 +44,6 @@ for (let card of cards) {
     const heartBtn = card.querySelector(".heartBtn");
     const callBtn = card.querySelector(".callBtn");
     const copyBtn = card.querySelector(".copyBtn");
-
     
 
 
@@ -58,8 +51,8 @@ for (let card of cards) {
         heartBtn.addEventListener("click", () => {
             hearts++;
             heartCountEl.innerText = hearts;
-            heartBtn.classList.toggle("text-red-500");
             updateCounters();
+            heartBtn.classList.toggle("text-red-500");
         });
     }
     if (callBtn) {
