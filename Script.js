@@ -30,7 +30,7 @@ function addHistory(name, number) {
             <span class="font-bold text-[16px]">${name}</span><br>
             <span class="text-gray-500">${number}</span>
         </div>
-        <span class="text-gray-500">${getTime()}</span>
+        <span class="text-gray-500 whitespace-nowrap sm:whitespace-nowrap">${getTime()}</span>
     `;
     historyBox.prepend(div);
 }
