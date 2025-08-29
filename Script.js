@@ -32,7 +32,7 @@ function addHistory(name, number) {
         </div>
         <span class="text-gray-500 whitespace-nowrap sm:whitespace-nowrap">${getTime()}</span>
     `;
-    historyBox.prepend(div);
+    historyBox.append(div);
 }
 
 const cards = document.querySelectorAll(".bg-white.rounded-xl");
